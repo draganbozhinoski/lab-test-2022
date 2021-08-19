@@ -1,89 +1,72 @@
-# Exam Sept 2021
+# Испитна задача
 
+Потребно е да развиете апликација за менаџирање на вести која ќе овозможи прегледување, додавање, уредување и бришење на вести.
 
+## Функционални барања
 
-## Getting started
+- **(20 поени)** Потребно е на патеките `/` и `/news` да прикажете листа од сите креирани вести со користење на темплејтот `list.html`.
+  - Имплементацијата на оваа функционалност може да ја проверите со тестот `test_list_20pt`.
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+- **(20 поени)** Потребно е да се  имплементира додавање на вести. При клик на копчето **Add news** од темплејтот `list.html`, 
+потребно е да се прикаже темплејтот `form.html` на патеката `/news/add`, каде при клик на **Submit** ќе се креира и запише нова вест 
+во базата на податоци. Потоа треба да се прикаже страната `/news`.
+  - Имплементацијата на оваа функционалност може да ја проверите со тестовите `test_create_10pt` и `test_create_mvc_10pt`.
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+- **(10 поени)** Потребно е да се  имплементира бришење на вест. При клик на копчето **Delete** од темплејтот `list.html`, потребно е да 
+се избрише веста од базата на податоци. Потоа треба да се прикаже страната `/news`.
+  - Имплементацијата на оваа функционалност може да ја проверите со тестовите `test_delete_5pt` и `test_delete_mvc_5pt`.
 
-## Add your files
+- **(20 поени)** Потребно е да се  имплементира променување на вест. При клик на копчето **Edit** од темплејтот `list.html`, 
+потребно е да се прикаже темплејтот `form.html` на патеката `/news/[id]/edit`, при што во `<input>` елементите ќе се прикажат 
+вредностите за ентитетот кој се променува. При клик на **Submit** треба да се запише промената на веста во базата на податоци. 
+Потоа треба да се прикаже страната `/news`.
+  - Имплементацијата на оваа функционалност може да ја проверите со тестовите `test_edit_10pt` и `test_edit_mvc_10pt`.
 
-- [ ] [Create](https://gitlab.com/-/experiment/new_project_readme_content:50a0442df6fff19299cc224ce5bbe829?https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://gitlab.com/-/experiment/new_project_readme_content:50a0442df6fff19299cc224ce5bbe829?https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://gitlab.com/-/experiment/new_project_readme_content:50a0442df6fff19299cc224ce5bbe829?https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+- **(20 поени)** Потребно е да се имплементира like на вест. При клик на копчето **Like** од темплејтот `list.html`, 
+потребно е да се зголеми бројот на корисници на кои им се допаѓа веста за 1. Потоа треба да се прикаже страната `/news`.
+  
+    Потребно е да конфигурирате најава на `/login` и одјава на `/logout`. Притоа, јавна треба да биде само страницата `/`, 
+    додека сите останати страници треба да се видливи само за `ROLE_ADMIN`. Дополнително, кај`list.html` копчињата 
+    **Edit**, **Delete** и **Add news** треба да се видливи само за `ROLE_ADMIN`, додека пак копчето **Like** треба да е 
+    видливо само за `ROLE_USER`.
+  - Имплементацијата на оваа функционалност може да ја проверите со тестовите `test_security_urls_7pt`, `test_security_buttons_7pt`, 
+  `test_like_3pt` и `test_like_mvc_3pt`.
 
-```
-cd existing_repo
-git remote add origin https://gitlab.com/finki.wp/exam-sept-2021.git
-git branch -M main
-git push -uf origin main
-```
+- **(20 поени)** Потребно е да овозможите пребарување на вест според цена помала од одредена вредност и тип на веста преку 
+формата со `id="filter-form"` во темплејтот `list.html`. Резултатите од пребарувањето треба да се прикажат на истата страница, 
+при што ќе се прикажат само вестите кои имаат цена помала од онаа која е внесена и припаѓаат во селектираниот тип. 
+Филтрирањето се извршува само според внесените полиња (ако се празни, се игнорира филтрирањето по тој критериум).
+  - Имплементацијата на оваа функционалност може да ја проверите со тестовите `test_filter_10pt` и `test2_filter_service_10pt`.
 
-## Integrate with your tools
+**ВАЖНО:** Сите споменати тестови се наоѓаат во класата `SeleniumScenarioTest`.
 
-- [ ] [Set up project integrations](https://gitlab.com/-/experiment/new_project_readme_content:50a0442df6fff19299cc224ce5bbe829?https://docs.gitlab.com/ee/user/project/integrations/)
+## Поставување на решението
+Тестовите мора задолжително да ги извршите, затоа што на тој начин го испраќате вашето решение за прегледување. За проверка 
+дали успешно е поставено вашето решение пристепете на патеката [wp.finki.ukim.mk/submit/[index]](http://wp.finki.ukim.mk/submit/index),
+каде наместо `[index]` ќе го наведете вашиот индекс, кој претходно ќе го поставите во `TODO` вредноста на текстот.
 
-## Collaborate with your team
+Тие ќе ви помогнат да ја проверите точноста на вашата имплементација, но и ќе испратат информации до нашиот сервер за тоа до 
+каде функционира вашата апликација. Ќе се гледа кодот само на студентите кај кои барем една проверка (`ExamAssert`) ќе помине успешно.
 
-- [ ] [Invite team members and collaborators](https://gitlab.com/-/experiment/new_project_readme_content:50a0442df6fff19299cc224ce5bbe829?https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://gitlab.com/-/experiment/new_project_readme_content:50a0442df6fff19299cc224ce5bbe829?https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://gitlab.com/-/experiment/new_project_readme_content:50a0442df6fff19299cc224ce5bbe829?https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Automatically merge when pipeline succeeds](https://gitlab.com/-/experiment/new_project_readme_content:50a0442df6fff19299cc224ce5bbe829?https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+**НЕ Е ДОЗВОЛЕНО МЕНУВАЊЕ НА ТЕСТОВИТЕ, освен внесување на вашиот индекс**
 
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://gitlab.com/-/experiment/new_project_readme_content:50a0442df6fff19299cc224ce5bbe829?https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://gitlab.com/-/experiment/new_project_readme_content:50a0442df6fff19299cc224ce5bbe829?https://docs.gitlab.com/ee/user/application_security/sast/)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!).  Thank you to [makeareadme.com](https://gitlab.com/-/experiment/new_project_readme_content:50a0442df6fff19299cc224ce5bbe829?https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
-
+## Техничко упатство:
+- Во пакетот `mk.ukim.finki.wp.exam.example.model` веќе се креирани класите кои го репрезентираат моделот.
+  Потребно е да извршите нивно мапирање со соодветните JPA анотации за моделот успешно да се сними во базата на податоци.
+  Притоа важат следните услови:
+  - Една вест припаѓа на една категорија, додека пак на една категорија може да има повеќе вести.
+  - Идентификаторите за `News` и `NewsCategory` треба да бидат генерирани.
+- Во пакетот `mk.ukim.finki.wp.exam.example.service` се веќе дефинирани интерфејсите за сервисната логика.
+  За секој од методите имате опис што треба да биде имплементирано. Потребно е да се имплементираат овие интерфејси во 
+  соодветните класи во пакетот `mk.ukim.finki.wp.exam.example.service.impl`. Во коментарите на методите се објаснети
+  дополнителни услови (доколку ги има) кои треба да ги исполни методот.
+- Класите од пакетот `mk.ukim.finki.wp.exam.example.repository` треба да ги дополните со потребните методи кои ви се потребни 
+за да ја овозможите функционалноста на имплементацијата на сервисниот слој. Тие треба да се изведат од класата `JpaRepository` од Spring Data.
+- Потребно е да ја анотирате класата `DataInitializer` и нејзините соодветни методи, така што при стартување на апликацијата ќе се изврши методот `initData`.
+- Во класата `mk.ukim.finki.wp.exam.example.web.NewsController` се дефинирани сите методи кои се потребни за да се имплементира менаџирањето со вестите.
+  За секој од методите имате опис што треба да биде имплементирано. Потребно е овие handler методи да ги мапирате со користење само на HTTP GET и POST барања.
+- Дополнете ги темплејтите со соодветните **Thymeleaf** атрибути за да се постигнат бараните функционалности.
+  Притоа, ако недостасуваат одредени елементи и атрибути, може да ги додадете, но **НЕ СМЕЕ** да ги менувате `id` и `class` својствата на тековните елементи.
+  Во коментари се дадени описи за елементите кои треба да се повторуваат, како и кои методи од контролерот треба да се повикаат.
+- Потребно е да конфигурирате најава и одјава на корисници со Spring Security во класата `SecurityConfig`.
+  Во самата класа има опис што треба да биде имплементирано.
