@@ -1,8 +1,6 @@
 package mk.ukim.finki.wp.june2021.model;
 
-import javax.persistence.*;
 
-@Entity
 public class News {
 
     public News() {
@@ -17,8 +15,6 @@ public class News {
         this.likes = 0;
     }
 
-    @Id
-    @GeneratedValue
     private Long id;
 
     private String name;
@@ -29,7 +25,6 @@ public class News {
 
     private NewsType type;
 
-    @ManyToOne
     private NewsCategory category;
 
     private Integer likes = 0;

@@ -26,7 +26,7 @@ public class ItemsPage extends AbstractPage {
     @FindBy(className = "edit-item")
     private List<WebElement> editButtons;
 
-    @FindBy(css = ".follow-item")
+    @FindBy(css = ".like-item")
     private List<WebElement> likeButtons;
 
     @FindBy(css = ".add-item")
