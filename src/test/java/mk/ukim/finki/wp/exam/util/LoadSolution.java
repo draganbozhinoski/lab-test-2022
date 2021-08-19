@@ -19,7 +19,7 @@ public class LoadSolution {
 
     public static void main(String[] args) throws Exception {
           tryResetSrcMain();
-          getAndLoadLastSolution("171028");
+          getAndLoadLastSolution("");
     }
 
     private static void tryResetSrcMain() {
@@ -53,7 +53,7 @@ public class LoadSolution {
 
     public static void getAndLoadLastSolution(String index) throws IOException {
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<String> response = restTemplate.exchange("http://wp.finki.ukim.mk/eg/api/grading/student_last/" + index,
+        ResponseEntity<String> response = restTemplate.exchange("http://env4health.finki.ukim.mk/eg/api/grading/student_last/" + index,
                 HttpMethod.GET,
                 new HttpEntity<>(createHeaders(System.getenv("WP_USER"), System.getenv("WP_PASS"))),
                 String.class);
@@ -62,7 +62,7 @@ public class LoadSolution {
 
     public static void getSolutionById(Integer id) throws IOException {
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<String> response = restTemplate.exchange("http://wp.finki.ukim.mk/eg/api/grading/submission/" + id,
+        ResponseEntity<String> response = restTemplate.exchange("http://env4health.finki.ukim.mk/eg/api/grading/submission/" + id,
                 HttpMethod.GET,
                 new HttpEntity<>(createHeaders(System.getenv("WP_USER"), System.getenv("WP_PASS"))),
                 String.class);
