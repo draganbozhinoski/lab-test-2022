@@ -1,8 +1,8 @@
-package mk.ukim.finki.wp.june2021.config;
+package mk.ukim.finki.wp.september2021.config;
 
-import mk.ukim.finki.wp.june2021.model.NewsType;
-import mk.ukim.finki.wp.june2021.service.NewsCategoryService;
-import mk.ukim.finki.wp.june2021.service.NewsService;
+import mk.ukim.finki.wp.september2021.model.NewsType;
+import mk.ukim.finki.wp.september2021.service.NewsCategoryService;
+import mk.ukim.finki.wp.september2021.service.NewsService;
 
 public class DataInitializer {
 

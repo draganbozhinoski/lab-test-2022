@@ -1,4 +1,4 @@
-package mk.ukim.finki.wp.june2021.selenium;
+package mk.ukim.finki.wp.september2021.selenium;
 
 import mk.ukim.finki.wp.exam.util.ExamAssert;
 import org.openqa.selenium.WebDriver;

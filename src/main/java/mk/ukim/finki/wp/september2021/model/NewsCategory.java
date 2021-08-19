@@ -1,4 +1,4 @@
-package mk.ukim.finki.wp.june2021.model;
+package mk.ukim.finki.wp.september2021.model;
 
 
 public class NewsCategory {

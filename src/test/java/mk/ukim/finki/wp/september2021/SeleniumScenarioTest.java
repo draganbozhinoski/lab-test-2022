@@ -1,16 +1,16 @@
-package mk.ukim.finki.wp.june2021;
+package mk.ukim.finki.wp.september2021;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import mk.ukim.finki.wp.exam.util.CodeExtractor;
-import mk.ukim.finki.wp.june2021.model.News;
-import mk.ukim.finki.wp.june2021.model.NewsType;
-import mk.ukim.finki.wp.june2021.selenium.AbstractPage;
-import mk.ukim.finki.wp.june2021.selenium.AddOrEditEvent;
-import mk.ukim.finki.wp.june2021.selenium.ItemsPage;
-import mk.ukim.finki.wp.june2021.selenium.LoginPage;
-import mk.ukim.finki.wp.june2021.model.NewsCategory;
-import mk.ukim.finki.wp.june2021.service.NewsCategoryService;
-import mk.ukim.finki.wp.june2021.service.NewsService;
+import mk.ukim.finki.wp.september2021.model.News;
+import mk.ukim.finki.wp.september2021.model.NewsType;
+import mk.ukim.finki.wp.september2021.selenium.AbstractPage;
+import mk.ukim.finki.wp.september2021.selenium.AddOrEditEvent;
+import mk.ukim.finki.wp.september2021.selenium.ItemsPage;
+import mk.ukim.finki.wp.september2021.selenium.LoginPage;
+import mk.ukim.finki.wp.september2021.model.NewsCategory;
+import mk.ukim.finki.wp.september2021.service.NewsCategoryService;
+import mk.ukim.finki.wp.september2021.service.NewsService;
 import mk.ukim.finki.wp.exam.util.ExamAssert;
 import mk.ukim.finki.wp.exam.util.SubmissionHelper;
 import org.hamcrest.Description;

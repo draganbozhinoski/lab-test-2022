@@ -1,4 +1,4 @@
-package mk.ukim.finki.wp.june2021.config;
+package mk.ukim.finki.wp.september2021.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;

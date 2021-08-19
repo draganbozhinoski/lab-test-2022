@@ -1,9 +1,9 @@
-package mk.ukim.finki.wp.june2021.web;
+package mk.ukim.finki.wp.september2021.web;
 
-import mk.ukim.finki.wp.june2021.model.News;
-import mk.ukim.finki.wp.june2021.model.NewsType;
-import mk.ukim.finki.wp.june2021.service.NewsCategoryService;
-import mk.ukim.finki.wp.june2021.service.NewsService;
+import mk.ukim.finki.wp.september2021.model.News;
+import mk.ukim.finki.wp.september2021.model.NewsType;
+import mk.ukim.finki.wp.september2021.service.NewsCategoryService;
+import mk.ukim.finki.wp.september2021.service.NewsService;
 
 import java.util.List;
 
