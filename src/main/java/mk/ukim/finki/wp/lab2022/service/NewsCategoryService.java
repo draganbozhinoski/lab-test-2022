@@ -1,7 +1,7 @@
-package mk.ukim.finki.wp.september2021.service;
+package mk.ukim.finki.wp.lab2022.service;
 
-import mk.ukim.finki.wp.september2021.model.NewsCategory;
-import mk.ukim.finki.wp.september2021.model.exceptions.InvalidNewsCategoryIdException;
+import mk.ukim.finki.wp.lab2022.model.NewsCategory;
+import mk.ukim.finki.wp.lab2022.model.exceptions.InvalidNewsCategoryIdException;
 
 import java.util.List;
 

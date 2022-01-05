@@ -1,16 +1,16 @@
-package mk.ukim.finki.wp.september2021;
+package mk.ukim.finki.wp.lab2022;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import mk.ukim.finki.wp.exam.util.CodeExtractor;
-import mk.ukim.finki.wp.september2021.model.News;
-import mk.ukim.finki.wp.september2021.model.NewsType;
-import mk.ukim.finki.wp.september2021.selenium.AbstractPage;
-import mk.ukim.finki.wp.september2021.selenium.AddOrEditEvent;
-import mk.ukim.finki.wp.september2021.selenium.ItemsPage;
-import mk.ukim.finki.wp.september2021.selenium.LoginPage;
-import mk.ukim.finki.wp.september2021.model.NewsCategory;
-import mk.ukim.finki.wp.september2021.service.NewsCategoryService;
-import mk.ukim.finki.wp.september2021.service.NewsService;
+import mk.ukim.finki.wp.lab2022.model.News;
+import mk.ukim.finki.wp.lab2022.model.NewsType;
+import mk.ukim.finki.wp.lab2022.selenium.AbstractPage;
+import mk.ukim.finki.wp.lab2022.selenium.AddOrEditEvent;
+import mk.ukim.finki.wp.lab2022.selenium.ItemsPage;
+import mk.ukim.finki.wp.lab2022.selenium.LoginPage;
+import mk.ukim.finki.wp.lab2022.model.NewsCategory;
+import mk.ukim.finki.wp.lab2022.service.NewsCategoryService;
+import mk.ukim.finki.wp.lab2022.service.NewsService;
 import mk.ukim.finki.wp.exam.util.ExamAssert;
 import mk.ukim.finki.wp.exam.util.SubmissionHelper;
 import org.hamcrest.Description;
@@ -37,8 +37,8 @@ import java.util.List;
 public class SeleniumScenarioTest {
 
     static {
-        SubmissionHelper.exam = "wp-september";
-        SubmissionHelper.index = "34504";
+        SubmissionHelper.exam = "wp-lab-2022";
+        SubmissionHelper.index = "TODO";
     }
 
     @Autowired

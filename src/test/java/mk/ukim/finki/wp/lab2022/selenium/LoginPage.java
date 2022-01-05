@@ -1,4 +1,4 @@
-package mk.ukim.finki.wp.september2021.selenium;
+package mk.ukim.finki.wp.lab2022.selenium;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

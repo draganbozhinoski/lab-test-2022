@@ -1,4 +1,4 @@
-package mk.ukim.finki.wp.september2021;
+package mk.ukim.finki.wp.lab2022;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

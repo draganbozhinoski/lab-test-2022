@@ -1,4 +1,4 @@
-package mk.ukim.finki.wp.september2021.model;
+package mk.ukim.finki.wp.lab2022.model;
 
 
 public class News {

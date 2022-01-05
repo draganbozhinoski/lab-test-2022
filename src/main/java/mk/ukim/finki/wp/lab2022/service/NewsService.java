@@ -1,9 +1,9 @@
-package mk.ukim.finki.wp.september2021.service;
+package mk.ukim.finki.wp.lab2022.service;
 
-import mk.ukim.finki.wp.september2021.model.News;
-import mk.ukim.finki.wp.september2021.model.NewsType;
-import mk.ukim.finki.wp.september2021.model.exceptions.InvalidNewsIdException;
-import mk.ukim.finki.wp.september2021.model.exceptions.InvalidNewsCategoryIdException;
+import mk.ukim.finki.wp.lab2022.model.News;
+import mk.ukim.finki.wp.lab2022.model.NewsType;
+import mk.ukim.finki.wp.lab2022.model.exceptions.InvalidNewsIdException;
+import mk.ukim.finki.wp.lab2022.model.exceptions.InvalidNewsCategoryIdException;
 
 import java.util.List;
 
