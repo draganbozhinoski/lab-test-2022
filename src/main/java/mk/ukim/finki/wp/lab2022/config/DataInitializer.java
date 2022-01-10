@@ -3,7 +3,10 @@ package mk.ukim.finki.wp.lab2022.config;
 import mk.ukim.finki.wp.lab2022.model.NewsType;
 import mk.ukim.finki.wp.lab2022.service.NewsCategoryService;
 import mk.ukim.finki.wp.lab2022.service.NewsService;
+import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+@Component
 public class DataInitializer {
 
     private final NewsCategoryService newsCategoryService;
@@ -20,7 +23,7 @@ public class DataInitializer {
         else if (i % 3 == 1) return NewsType.PROMOTION;
         return NewsType.PUBLIC;
     }
-
+    @PostConstruct
     public void initData() {
         for (int i = 1; i < 6; i++) {
             this.newsCategoryService.create("News category: " + i);

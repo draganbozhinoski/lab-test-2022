@@ -1,6 +1,8 @@
 package mk.ukim.finki.wp.lab2022.model;
 
+import javax.persistence.*;
 
+@Entity
 public class News {
 
     public News() {
@@ -14,7 +16,8 @@ public class News {
         this.category = category;
         this.likes = 0;
     }
-
+    @Id
+    @GeneratedValue
     private Long id;
 
     private String name;
@@ -23,8 +26,10 @@ public class News {
 
     private Double price;
 
+    @Enumerated(EnumType.STRING)
     private NewsType type;
 
+    @ManyToOne
     private NewsCategory category;
 
     private Integer likes = 0;

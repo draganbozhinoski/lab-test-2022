@@ -1,6 +1,10 @@
 package mk.ukim.finki.wp.lab2022.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
+@Entity
 public class NewsCategory {
 
     public NewsCategory() {
@@ -9,7 +13,8 @@ public class NewsCategory {
     public NewsCategory(String name) {
         this.name = name;
     }
-
+    @Id
+    @GeneratedValue
     private Long id;
 
     private String name;

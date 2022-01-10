@@ -4,9 +4,15 @@ import mk.ukim.finki.wp.lab2022.model.News;
 import mk.ukim.finki.wp.lab2022.model.NewsType;
 import mk.ukim.finki.wp.lab2022.service.NewsCategoryService;
 import mk.ukim.finki.wp.lab2022.service.NewsService;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
+@Controller
+@RequestMapping("/")
 public class NewsController {
 
     private final NewsService service;
@@ -29,14 +35,27 @@ public class NewsController {
      * @param type
      * @return The view "list.html".
      */
-    public String showNews( Double price,  NewsType type) {
+    @GetMapping({"/news","/"})
+    public String showNews(@RequestParam(required = false) Double price,
+                           @RequestParam(required = false) NewsType type,
+                           Model model) {
         List<News> news;
         if (price == null && type == null) {
             news = this.service.listAllNews();
-        } else {
+        } else{
             news = this.service.listNewsWithPriceLessThanAndType(price, type);
         }
-        return "";
+        model.addAttribute("news",news);
+        model.addAttribute("categories",newsCategoryService.listAll());
+        List<NewsType> types = new ArrayList<>();
+        NewsType a = NewsType.DRAFT;
+        NewsType b = NewsType.PROMOTION;
+        NewsType c = NewsType.PUBLIC;
+        types.add(a);
+        types.add(b);
+        types.add(c);
+        model.addAttribute("types",types);
+        return "list";
     }
 
     /**
@@ -45,8 +64,18 @@ public class NewsController {
      *
      * @return The view "form.html".
      */
-    public String showAdd() {
-        return "";
+    @GetMapping("/news/add")
+    public String showAdd(Model model) {
+        model.addAttribute("categories",newsCategoryService.listAll());
+        List<NewsType> types = new ArrayList<>();
+        NewsType a = NewsType.DRAFT;
+        NewsType b = NewsType.PROMOTION;
+        NewsType c = NewsType.PUBLIC;
+        types.add(a);
+        types.add(b);
+        types.add(c);
+        model.addAttribute("types",types);
+        return "form";
     }
 
     /**
@@ -56,8 +85,19 @@ public class NewsController {
      *
      * @return The view "form.html".
      */
-    public String showEdit(Long id) {
-        return "";
+    @GetMapping("/news/{id}/edit")
+    public String showEdit(@PathVariable String id,Model model) {
+        model.addAttribute("vestToEdit",service.findById(Long.parseLong(id)));
+        model.addAttribute("categories",newsCategoryService.listAll());
+        List<NewsType> types = new ArrayList<>();
+        NewsType a = NewsType.DRAFT;
+        NewsType b = NewsType.PROMOTION;
+        NewsType c = NewsType.PUBLIC;
+        types.add(a);
+        types.add(b);
+        types.add(c);
+        model.addAttribute("types",types);
+        return "form";
     }
 
     /**
@@ -67,13 +107,18 @@ public class NewsController {
      *
      * @return The view "list.html".
      */
-    public String create(String name,
-                         String description,
-                         Double price,
-                         NewsType type,
-                         Long category) {
-        this.service.create(name, description, price, type, category);
-        return "";
+    @PostMapping("/news")
+    public String create(@RequestParam String name,
+                         @RequestParam String description,
+                         @RequestParam Double price,
+                         @RequestParam NewsType type,
+                         @RequestParam Long category,
+                         @RequestParam(required = false) Long vestId) {
+//        if(vestId!=null)
+//            this.service.update(vestId,name,description,price,type,category);
+//        else
+            this.service.create(name, description, price, type, category);
+        return "redirect:/news";
     }
 
     /**
@@ -83,14 +128,15 @@ public class NewsController {
      *
      * @return The view "list.html".
      */
-    public String update(Long id,
-                         String name,
-                         String description,
-                         Double price,
-                         NewsType type,
-                         Long category) {
+    @PostMapping("/news/{id}")
+    public String update(@PathVariable Long id,
+                         @RequestParam String name,
+                         @RequestParam String description,
+                         @RequestParam Double price,
+                         @RequestParam NewsType type,
+                         @RequestParam Long category) {
         this.service.update(id, name, description, price, type, category);
-        return "";
+        return "redirect:/news";
     }
 
     /**
@@ -100,9 +146,10 @@ public class NewsController {
      *
      * @return The view "list.html".
      */
-    public String delete(Long id) {
-        this.service.delete(id);
-        return "";
+    @PostMapping("/news/{id}/delete")
+    public String delete(@PathVariable String id) {
+        this.service.delete(Long.parseLong(id));
+        return "redirect:/news";
     }
 
     /**
@@ -112,9 +159,9 @@ public class NewsController {
      *
      * @return The view "list.html".
      */
-
-    public String like(Long id) {
-        this.service.like(id);
-        return "";
+    @PostMapping("/news/{id}/like")
+    public String like(@PathVariable String id) {
+        this.service.like(Long.parseLong(id));
+        return "redirect:/news";
     }
 }
